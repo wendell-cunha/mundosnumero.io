@@ -1,4 +1,5 @@
-# Portfólio Desenvolvedor FrontEnd
+# Portfólio Desenvolvedor FrontEnd (em Desenvolvimento)
 
-## Tarefas:
+##Usando HTML, CSS,JavaScript e muita força de vontade
+
 
