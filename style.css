@@ -1,11 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Rowdies&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Rowdies&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Mono:wght@300&family=Rowdies&display=swap');
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css);
 
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
+
+:root{
+    --font-primary: "Lato"; serif;
+    --font-secundary:Roboto+Mono:wght@300&family;
+
+}
+
+
+.hamburguer{
+    /* background-color: red; */
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    cursor: pointer;
+}
+
+.show-menu.hamburguer{
+    right: 16rem;
+}
+
+.line{
+    width: 100%;
+    background-color: #fff;
+    height: .1rem;
+    box-shadow: 0.1rem 0.1rem 1px #000;
+    transition: transform 1s;
+    
+}
+
+
+.show-menu #line1{
+    transform: rotate(45deg) translate(.3rem, .44rem);
+    
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.3rem, -.45rem);    
+}
+
 
 header{
     width: 100%;
@@ -25,7 +78,7 @@ header{
     height: 100%;
     object-fit: cover;
     opacity: 0.5;
-    animation: zoom 25s;
+    animation: zoom 20s;
 }
 
 @keyframes zoom {
@@ -37,7 +90,6 @@ header{
     }
 }
 
-
 .banner {
     position: absolute;
     top: 30%;
@@ -47,7 +99,7 @@ header{
 .banner h1 {
     color: #ffffff;
     font-size: 3.5rem;
-    font-family: "Lato"; serif;
+    font-family: var(--font-primary)
     font-weight: 200;
     text-shadow: .3rem .4rem 2px rgba(0,0,0,.4);
     line-height: 3.5rem;
@@ -56,7 +108,7 @@ header{
 }
 
 .banner p{
-    font-family: "Lato"; serif;
+    font-family: var(--font-secundary)
     color: #fff;
     font-size: 2rem;
     text-shadow: .2rem .2rem rgba(0,0,0,.4);
@@ -65,6 +117,12 @@ header{
     animation: moveBanner 1s 0.7s forwards;
 
 }
+
+#nome{
+    color: #ffffff;
+}
+
+
 
 .banner button {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -100,4 +158,280 @@ header{
         transform: translateY(0) rotateY(0);
         opacity: 1;
     }
+}
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+}
+
+.show-menu .sidebar{
+    right: 0;
+}
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-item{
+    text-align: center;
+    scroll-margin-bottom: .5srem;
+}
+
+.menu-link{
+    font: var(--font-primary);
+    font-size: 2rem;
+    color:slateblue;
+    transition: color 1s;
+
+}
+
+.menu-link:hover{
+    color:brown;
+}
+
+.social-media{
+    /* background-color: rgba(255,0,0,1); */
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.social-media i{
+
+    /* background-color: #6a3096; */
+    /* color: rgba(0,255,0,1); */
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Sessão Projetos */
+
+.sessao-projetos{
+    background-color: rgb(243, 239, 239);
+}
+
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: color: rgb(243, 239, 239);
+  
+}
+
+.card{
+    width: 20rem;
+    height: 30rem;
+    position: static;
+}
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(243, 239, 239);
+    border-radius: .5rem;
+}
+
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    opacity: .8;
+}
+
+ .card-info{
+    position:relative
+    font-family: var(--font-primary);
+    bottom: 0;
+    padding: 2rem;
+    text-shadow: 0 0.1rem 0.3rem rgb(0,0,0,1));
+    background-color:rgb(243, 239, 239);
+} 
+
+.card-info h2{
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: 500;
+    background-color:rgb(243, 239, 239);
+
+}
+
+.card-info h3{
+    font-family: var(--font-primary);
+    /* font-size: 3rem; */
+    font-weight: 200;
+    color:deeppink 
+
+}
+
+.card-info button{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    background-color: darkblue;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: moveBanner 1s 0.9s forwards;
+    position:absolute;
+}
+
+/* Sessão Conhecimentos */
+
+.conhecimentos{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(6, 7rem);
+    row-gap: 1rem;
+}
+
+.conhecimento:nth-child(1){
+    grid-column: 4/7;
+    grid-row: 1/3;
+}
+
+.conhecimento:nth-child(2){
+    grid-column: 3/6;
+    grid-row: 3/5;
+}
+.conhecimento:nth-child(3){
+    grid-column: 4/7;
+    grid-row: 5/-1;
+}
+
+.conhecimento:nth-child(4){
+    grid-column: 11/14;
+    grid-row: 1/3;
+}
+
+.conhecimento:nth-child(5){
+    grid-column: 12/15;
+    grid-row: 3/5;
+}
+
+.conhecimento:nth-child(6){
+    grid-column: 11/14;
+    grid-row: 5/-1;
+}
+
+.sessao-conhecimentos{
+    background-color:rgb(243, 239, 239);
+}
+.sessao-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sessao-header h1{
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    /* color: chartreuse; */
+    border-bottom: solid 3px #622569;
+    margin-bottom: 1.5rem;
+}
+
+.conhecimento-header{
+    display: flex;
+    align-items: center;
+}
+
+.conhecimento-header i{
+    font-size: 2.5rem;
+}
+
+.conhecimento-header h3{
+    font-family: var(--font-secundary);
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.conhecimento-text{
+    font-family: var(--font-primary);
+    margin-top: 1rem;
+}
+
+
+.quem-sou{
+    background-color: rgb(243, 239, 239);
+    display: flex;
+}
+.foto-wendell{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    padding: 50px;
+    object-fit: cover;
+    width: 90%;
+    height: 90%;
+    border-radius:.5rem;
+    opacity: .8;
+
+}
+
+.card-img-wrapper{
+    padding: 70px;
+}
+
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(243, 239, 239);
+    border-radius: .5rem;
+}
+
+
+.wendell p{
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+
+}
+
+.mundo{
+    background-color: rgb(243, 239, 239);
+}
+
+.titulo-textos{
+    padding: 10px;
+    color: brown;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-width: 5px
+}
+
+.video{
+    display:flex;
+    padding: 30px;
 }
